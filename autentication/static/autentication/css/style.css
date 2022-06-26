@@ -1,0 +1,123 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-image: linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5));
+    background-repeat: no-repeat;
+}
+div#conteiner_top {
+    display: flex;
+    orientation: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: 150px;
+    border-bottom: 1px solid yellowgreen;
+    
+}
+
+.conteiner_logo {
+    width: 300px;
+    height: 150px;
+    min-width: 300px;  
+}
+
+.conteiner_contatos {
+    display: flex;
+    orientation: row;
+    width: 300px;
+    height: 150px;
+    min-width: 300px;
+    
+    justify-content: center;
+    align-items: center;
+      
+}
+
+.conteiner_contatos a {
+    font-size: 25pt;
+    text-decoration: none;
+}
+
+.conteiner_contatos a:hover {
+    text-decoration: underline;
+}
+
+section {
+    display: flex;
+    orientation: row;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bloco-center {
+    border: 0px solid black;
+    width: 350px;
+    height: 400px;
+    position: relative;
+    background-color: rgba(240, 248, 255, 0.336);
+    border-radius: 25px;
+    
+    
+}
+
+.margin-left {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    
+}
+
+.margin-left input {
+    width: 100%;
+    height: 40px;
+    font-size: 15pt;
+    border: 0px;
+}
+
+.inputs_entrada input {
+    text-indent: 15%;
+}
+.icon-email {
+    position: absolute;
+    margin-top: 22px;
+    margin-left: 8px;
+    /*src: url('./img/icon-email.png');*/
+}
+
+.icon-senha {
+    position: absolute;
+    margin-top: 22px;
+    margin-left: 8px;
+    /*src: url('./img/icone-senha.png.png');*/
+    
+}
+
+
+div.opcoes-ul {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;    
+}
+.config-ancora {
+    display: inline;
+    font-size: 15pt;
+    padding-left: 20px;
+    padding-right: 20px;    
+}
+
+.termos p {
+    text-align: center;
+    padding-top: 50px;
+}

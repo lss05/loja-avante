@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="{% static 'css/style.css'}">-->
+    <link rel="stylesheet" href="{% static 'autentication/css/style.css' %}">
+    <title>Acessar</title>
+</head>
+<body>
+    <caption>
+        <div id="conteiner_top">
+            <div class="conteiner_logo"></div>
+            <div class="conteiner_contatos"><a target="_self" href="contatos.html">Contatos</a></div>
+        </div>
+    </caption>
+    <header>
+        <section>
+            <div class="bloco-center">
+                <div class="cabecalho margin-left">
+                    <h2>Área de acesso do cliente</h2>
+                </div>
+                <div class="inputs_entrada margin-left">
+                    <div>
+                        <img class="icon-email" src="{% static 'autentication/img/icon-email.png' %}" alt="">
+                        <p>Email:</p>
+                        <input type="text" name="" id="email">
+                    </div>
+
+                    <div>
+                        <img class="icon-senha" src="{% static 'autentication/img/icone-senha.png' %}" alt="">
+                        <p>Senha</p>
+                        <input type="password" name="" id="senha">
+                    </div>
+                </div>
+                <div class="opcoes_login margin-left">
+                    <input type="button" value="Acessar painel">
+                </div>
+                <div class="opcoes-ul">
+                    <!--<input type="button" value="Recuperar senha">
+                    <input type="button" value="Mi cadastrar">-->
+                    <a class="config-ancora" href="recupera_senha.html">Recuperar Senha</a>
+                    <a class="config-ancora" href="cadastrar_user.html">Criar Conta</a>
+                </div>
+                <div class="termos">
+                    <p>Ao continuar com o acesso, você concorda com a nossa política de privacidade</p>
+                </div>
+            </div>
+        </section>
+
+    </header>
+    <footer>
+
+    </footer>
+</body>
+</html>
