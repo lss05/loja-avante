@@ -10,7 +10,7 @@ class clientes(models.Model):
     id = models.AutoField(primary_key=True,auto_created=True)
     nome = models.CharField(max_length=45,blank=False, null=False)
     cpf = models.CharField(max_length=11, unique=True, null=False, blank=False)
-    email = models.EmailField(max_length=255,unique=True,null=True,blank=True)
+    email = models.EmailField(max_length=255,unique=True,null=False,blank=False)
     cel = models.CharField(max_length=14, null=True,blank=True)
     situacao_conta = models.BooleanField(default=True)
     #dados localização
@@ -21,6 +21,9 @@ class clientes(models.Model):
     cidade = models.CharField(max_length=45,null=False,blank=False)
     estado = models.CharField(max_length=2,null=False,blank=False)
     ponto_referencia = models.TextField(max_length=255,null=True,blank=True)
+
+    def __str__(self) -> str:
+        return self.nome
 
 
 class GruposProdutos(models.Model):

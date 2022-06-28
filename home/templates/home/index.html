@@ -16,13 +16,17 @@
     <header class="conteiner-flags">
         <div class="conteinerAcessar">
             <div class="subAcessar">
-                <p class="p_acessar">Acessar</p>
+                <p class="p_acessar">
+                    <a class="nav-link p_acessar" href="{% url 'autentication:autenticar' %}">Acessar</a>
+                </p>
             </div>                
         </div>
 
         <div class="conteinerCadastrar">
             <div class="subCadastrar">
-                <p class="p_cadastrar">Cadastrar</p>
+                <p class="p_cadastrar">
+                    <a class="nav-link p_acessar" href="{% url 'autentication:cad_user' %}">Criar Conta</a>
+                </p>
             </div>
         </div>
     </header>

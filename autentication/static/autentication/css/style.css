@@ -84,6 +84,10 @@ section {
     font-size: 15pt;
     border: 0px;
 }
+.entrada {
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.322);
+}
 
 .inputs_entrada input {
     text-indent: 15%;
@@ -93,12 +97,14 @@ section {
     margin-top: 22px;
     margin-left: 8px;
     /*src: url('./img/icon-email.png');*/
+    opacity: 0.5;
 }
 
 .icon-senha {
     position: absolute;
     margin-top: 22px;
     margin-left: 8px;
+    opacity: 0.5;
     /*src: url('./img/icone-senha.png.png');*/
     
 }
