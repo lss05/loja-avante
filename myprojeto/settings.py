@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'autentication',
-    #'area_cliente',
+    'cad_cliente',
     #'monitoramento',
     #'sobre_nos'
 ]
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'myprojeto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates','cad_cliente/templates/cad_cliente'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
