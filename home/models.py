@@ -1,29 +1,30 @@
 from django.db import models
-from datetime import datetime
 
 # Create your models here.
-class clientes(models.Model):
+#'user_acesso','senha_acesso','nome','cpf','email','cel','cep','rua_ondemora','num_casa','bairro_ondemora','cidade','ponto_referencia'
+class Clientes(models.Model):
     #acesso a plataforma
-    user_acesso = models.CharField(unique=True, max_length=45,blank=False, null=False)
-    senha_acesso = models.CharField(max_length=45,blank=False, null=False)
+    user_acesso = models.CharField(unique=True, max_length=45,blank=False, null=False,verbose_name='Usuário')
+    senha_acesso = models.CharField(max_length=45,blank=False, null=False,verbose_name='Senha')
     #dados pessoais
-    id = models.AutoField(primary_key=True,auto_created=True)
-    nome = models.CharField(max_length=45,blank=False, null=False)
-    cpf = models.CharField(max_length=11, unique=True, null=False, blank=False)
-    email = models.EmailField(max_length=255,unique=True,null=False,blank=False)
-    cel = models.CharField(max_length=14, null=True,blank=True)
+    id = models.AutoField(primary_key=True,auto_created=True,verbose_name='ID')
+    nome = models.CharField(max_length=45,blank=False, null=False,verbose_name='Nome')
+    cpf = models.CharField(max_length=11, unique=True, null=False, blank=False,verbose_name='CPF')
+    email = models.EmailField(max_length=255,unique=True,null=False,blank=False,verbose_name='Email')
+    cel = models.CharField(max_length=14, null=True,blank=True,verbose_name='Celular/Watsaap')
     situacao_conta = models.BooleanField(default=True)
     #dados localização
-    cep = models.CharField(max_length=9,null=False,blank=False)
-    rua_ondemora = models.TextField(max_length=255,null=False,blank=False)
-    num_casa = models.PositiveIntegerField(null=False,blank=False,default=0)
-    bairro_ondemora = models.CharField(max_length=100)
-    cidade = models.CharField(max_length=45,null=False,blank=False)
-    estado = models.CharField(max_length=2,null=False,blank=False)
-    ponto_referencia = models.TextField(max_length=255,null=True,blank=True)
+    cep = models.CharField(max_length=9,null=False,blank=False,verbose_name='Código Postal')
+    rua_ondemora = models.TextField(max_length=255,null=False,blank=False,verbose_name='Rua')
+    num_casa = models.PositiveIntegerField(null=False,blank=False,default=0,verbose_name='Número')
+    bairro_ondemora = models.CharField(max_length=100,verbose_name='Bairro')
+    cidade = models.CharField(max_length=45,null=False,blank=False,verbose_name='Cidade')
+    estado = models.CharField(max_length=2,null=False,blank=False,verbose_name='Estado')
+    ponto_referencia = models.TextField(max_length=255,null=True,blank=True,verbose_name='Ponto de referência')
 
     def __str__(self) -> str:
         return self.nome
+    
 
 
 class GruposProdutos(models.Model):
@@ -56,7 +57,7 @@ class Formas_pagamentos(models.Model):
 class Transacoes(models.Model):
     id = models.AutoField(primary_key=True,auto_created=True)
     data_transacao = models.DateTimeField(auto_now_add=True)
-    id_cliente = models.ForeignKey(clientes,on_delete=models.CASCADE)
+    id_cliente = models.ForeignKey(Clientes,on_delete=models.CASCADE)
     id_forma_pagamento = models.ForeignKey(Formas_pagamentos,on_delete=models.CASCADE)
     qtde_parcelamento = models.PositiveIntegerField(default=1)
     entrada_avista = models.FloatField(default=0.0)

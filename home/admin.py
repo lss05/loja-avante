@@ -1,9 +1,9 @@
 from operator import imod
 from django.contrib import admin
 from .models import GruposProdutos,Produtos,Promo_Produtos
-from .models import clientes,Formas_pagamentos,Transacoes
+from .models import Clientes,Formas_pagamentos,Transacoes
 # Register your models here.
 
 admin.site.register([GruposProdutos,Produtos,Promo_Produtos])
-admin.site.register([clientes,Formas_pagamentos,Transacoes])
+admin.site.register([Clientes,Formas_pagamentos,Transacoes])
 

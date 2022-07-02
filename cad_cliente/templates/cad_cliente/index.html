@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="{% static 'cad_cliente/css/stylecad_cliente.css' %}">
     <title>Document</title>
+
 </head>
 <body>
-    <h1>Form cadastro de pessoas</h1>
+    <section>
+        {% block content %}
+            <form class="form-teste" action="" method=POST>
+                {% csrf_token %}
+                {% for field in forms %}
+                    <div class="div-inputs">
+                        <label for={{ field.label }} class="label">{{field.label}}</label><br>
+                        {{field}}
+                    </div>
+                {% endfor %}
+                <input type="submit" value="Salvar">
+                <!--{{ fields }}
+                <input type="submit" value="Salvar">
+                <input type="password" name="" id="">-->
+            </form>
+        {% endblock %}
+    </section>
+    
 </body>
 </html>
