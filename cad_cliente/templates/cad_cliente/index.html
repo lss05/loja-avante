@@ -13,7 +13,7 @@
 <body>
     <section>
         {% block content %}
-            <form class="form-teste" action="" method=POST>
+            <form class="form-teste" action="caduserForm" method="POST">
                 {% csrf_token %}
                 {% for field in forms %}
                     <div class="div-inputs">
@@ -21,13 +21,13 @@
                         {{field}}
                     </div>
                 {% endfor %}
-                <input type="submit" value="Salvar">
+                <input class="btn-submit" type="submit" value="Salvar">
                 <!--{{ fields }}
                 <input type="submit" value="Salvar">
                 <input type="password" name="" id="">-->
             </form>
         {% endblock %}
     </section>
-    
+    <script src="{% static 'cad_cliente/js/myscript.js' %}"></script>
 </body>
 </html>

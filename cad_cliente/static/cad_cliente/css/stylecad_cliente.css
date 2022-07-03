@@ -19,11 +19,13 @@ body {
 
 section {
     width: 500px;
-    height: 840px;
+    height: 880px;
     margin-top: 100px;
     margin-bottom: 100px;
-    border: 1px solid black;
+    border: 0px solid black;
     border-radius: 20px;
+    background-color: rgba(192, 192, 189, 0.596);
+    box-shadow: 2px 2px 4px rgb(8, 8, 8);
 }
 
 .form-teste {
@@ -40,6 +42,11 @@ section {
     border-radius: 10px;
 }
 
+.label {
+    height: auto;
+    margin-bottom: 4px;
+}
+
 .div-inputs {
     display: block;
     border: 0px solid black;
@@ -48,10 +55,11 @@ section {
 
 .div-inputs input {
     width: 100%;
-    border: 0px;
+    border: 0px solid black;
     padding-top: 5px;
     padding-bottom: 5px;
     text-indent: 10px;
+    margin-top: 1px;
 }
 
 #id_rua_ondemora {
@@ -62,4 +70,13 @@ section {
 #id_ponto_referencia {
     height: 80px;
     text-indent: 10px;
+}
+
+.btn-submit {
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    margin-left: 25%;
+
 }

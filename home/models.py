@@ -14,9 +14,9 @@ class Clientes(models.Model):
     cel = models.CharField(max_length=14, null=True,blank=True,verbose_name='Celular/Watsaap')
     situacao_conta = models.BooleanField(default=True)
     #dados localização
-    cep = models.CharField(max_length=9,null=False,blank=False,verbose_name='Código Postal')
+    cep = models.CharField(max_length=8,null=False,blank=False,verbose_name='Código Postal')
     rua_ondemora = models.TextField(max_length=255,null=False,blank=False,verbose_name='Rua')
-    num_casa = models.PositiveIntegerField(null=False,blank=False,default=0,verbose_name='Número')
+    num_casa = models.CharField(max_length=10,null=True,blank=True,verbose_name='Número')
     bairro_ondemora = models.CharField(max_length=100,verbose_name='Bairro')
     cidade = models.CharField(max_length=45,null=False,blank=False,verbose_name='Cidade')
     estado = models.CharField(max_length=2,null=False,blank=False,verbose_name='Estado')
