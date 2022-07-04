@@ -10,18 +10,18 @@ class form_dados_cliente(forms.ModelForm):
     "type":"password","placeholder":"Digite sua senha aqui..."},))
     nome = forms.CharField(label='Nome completo*', widget=forms.TextInput(attrs={"class":"nomecompleto",
     "type":"text","placeholder":"Informe seu nome completo"},))
-    cpf = forms.CharField(label='CPF*', widget=forms.TextInput(attrs={"class":"mycpf",
-    "type":"number","placeholder":"Informe seu CPF aqui, apenas números"},))
+    cpf = forms.CharField(label='CPF*', widget=forms.TextInput(attrs={"class":"mycpf","id":"mycpf",
+    "type":"number","min":0,"placeholder":"Informe seu CPF aqui, apenas números","onkeypress": "return validarnumber(event,mycpf,11)"},))
     email = forms.CharField(label='E-mail*', widget=forms.TextInput(attrs={"class":"myemail",
     "type":"email","placeholder":"Informe seu E-mail"},))
-    cel = forms.CharField(label='Contato/Watsaap*', widget=forms.TextInput(attrs={"class":"contatowats",
-    "type":"number","placeholder":"Informe um número de contato/watsaap"},))
+    cel = forms.CharField(label='Contato/Watsaap*', widget=forms.TextInput(attrs={"class":"contatowats","onkeypress": "return validarnumber(event,mycel,16)",
+    "type":"number","min":0,"placeholder":"Informe um número de contato/watsaap","id":"mycel"},))
     cep = forms.CharField(label='Código postal*', widget=forms.TextInput(attrs={"class":"codigopostal","id":"mycep",
-    "type":"number","placeholder":"Informe seu Cep, apenas números","onkeypress": "return validarnumber(event,mycep,8)","maxlength":8},))
+    "type":"number","min":0,"placeholder":"Informe seu Cep, apenas números","onkeypress": "return validarnumber(event,mycep,8)","maxlength":8},))
     class Meta:
         model = Clientes
         fields = ['user_acesso','senha_acesso','nome','cpf','email','cel','cep','rua_ondemora',
-        'num_casa','bairro_ondemora','cidade','ponto_referencia']
+        'num_casa','bairro_ondemora','cidade','estado','ponto_referencia']
 
         """
         def __ini__(self,*args,**kwargs):

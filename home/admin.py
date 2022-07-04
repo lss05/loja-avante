@@ -1,4 +1,3 @@
-from operator import imod
 from django.contrib import admin
 from .models import GruposProdutos,Produtos,Promo_Produtos
 from .models import Clientes,Formas_pagamentos,Transacoes

@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import os
+from tkinter.font import names
 from django.contrib import admin
 from django.urls import path,include
 
@@ -21,6 +22,7 @@ from django.urls import path,include
 urlpatterns = [
     path('',include('home.urls_home',namespace='home')),
     path('autentication/',include('autentication.autentication_urls',namespace='autentication')),
-    path('cad_cliente/',include('cad_cliente.cad_user_urls')),
+    path('cad_cliente/',include('cad_cliente.cad_user_urls',namespace='formcliente')),
+    path('response_api/',include('app_api.api_urls',namespace='appapi')),
     path('admin/', admin.site.urls),
 ]
