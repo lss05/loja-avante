@@ -8,23 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type='text/css' href="{% static 'cad_cliente/css/stylecad_cliente.css' %}">
     <title>Document</title>
+    <style>
+        .errorlist {
+            font-size: 10pt;
+            color: red;
+            list-style-type: none;
+        }
+    </style>
 
 </head>
 <body>
     <section>
         {% block content %}
+        {{ funcaoteste }}
             <form class="form-teste" action="caduserForm" method="POST">
                 {% csrf_token %}
+                {% if forms.erros %}
+                    {{ forms.erros }}
+                {% endif %}
                 {% for field in forms %}
-                    <div class="div-inputs">
-                        <label for={{ field.label }} class="label">{{field.label}}</label><br>
-                        {{field}}
-                    </div>
+                        <div class="div-inputs">
+                            <label for={{ field.label }} class="label">{{ field.label }}</label><br>
+                            {{ field }}
+                            {{ field.errors }}
+                        </div>
                 {% endfor %}
-                <input class="btn-submit" type="submit" value="Salvar">
-                <!--{{ fields }}
-                <input type="submit" value="Salvar">
-                <input type="password" name="" id="">-->
+                <div class="div-btnsubmit">
+                    <input class="btn-submit" type="submit" value="Salvar">
+                </div>
+                
             </form>
         {% endblock %}
     </section>

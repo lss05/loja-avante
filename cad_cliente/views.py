@@ -4,6 +4,10 @@ from home.models import Clientes
 
 # Create your views here.
 cli = Clientes.objects.all()
+ERROR_FIELD = 'Ops! dados inválidos - verifique os dados inseridos.'
+
+def funcaoteste():
+    print('acessado de dentro do html')
 
 def caduserForm(request):
     fields = ['Usuário','Senha','Nome','CPF','Email','Celular/Watsaap','Código Postal','Rua',
@@ -12,7 +16,7 @@ def caduserForm(request):
         #Esse trecho de código apenas renderiza o modelform na minha pagina html/ 
         # apenas envia os objetos para serem mostrados no html 
         forms = form_dados_cliente()   
-        return render(request, 'cad_cliente/index.html',context={'forms': forms,'fields': fields})
+        return render(request, 'cad_cliente/index.html',context={'forms': forms,'fields': fields,'funcaoteste':funcaoteste})
     else:
         #Se o method for do tipo POST então está sendo recebido os dados do formulario para serem validados e
         # se for validados inserido no banco caso não for renderiza ou redireicona para a mesma padina que mando os 
@@ -20,9 +24,12 @@ def caduserForm(request):
         dados = request.POST
         print(dados)
         forms  =  form_dados_cliente(data=dados)
+        if forms.non_field_errors():
+            print('Erro no form')
+            
         if forms.is_valid():
             forms.save()
             forms = form_dados_cliente()
         else:
-            print('Deu Erro - Form invalidado.')
-        return render(request, 'cad_cliente/index.html',context={'forms': forms,'fields': fields})
+            print(f'Deu Erro - Form invalidado. {forms.non_field_errors()} OU {forms.errors}')
+        return render(request, 'cad_cliente/index.html',context={'forms': forms,'fields': fields,'err':forms.errors})

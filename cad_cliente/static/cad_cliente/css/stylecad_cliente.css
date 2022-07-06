@@ -82,3 +82,15 @@ section {
     margin-left: 25%;
     margin-top: 35px;
 }
+
+
+/*Erro vindo dos inputs fields do formulario não pode ser estilizados aqui.*/
+.errorlist {
+    font-size: 6pt;
+    color: red;
+    list-style-type: none;
+}
+.div-btnsubmit {
+    position: relative;
+    margin-bottom: 10px;
+}
