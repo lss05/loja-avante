@@ -18,28 +18,26 @@
 
 </head>
 <body>
-    <section>
-        {% block content %}
-        {{ funcaoteste }}
-            <form class="form-teste" action="caduserForm" method="POST">
-                {% csrf_token %}
-                {% if forms.erros %}
-                    {{ forms.erros }}
-                {% endif %}
-                {% for field in forms %}
-                        <div class="div-inputs">
-                            <label for={{ field.label }} class="label">{{ field.label }}</label><br>
-                            {{ field }}
-                            {{ field.errors }}
-                        </div>
-                {% endfor %}
-                <div class="div-btnsubmit">
-                    <input class="btn-submit" type="submit" value="Salvar">
-                </div>
-                
-            </form>
-        {% endblock %}
-    </section>
+    {% block content %}
+    <!--{{ funcaoteste }}-->
+        <form class="form-teste" action="caduserForm" method="POST">
+            {% csrf_token %}
+            {% if forms.erros %}
+                {{ forms.erros }}
+            {% endif %}
+            {% for field in forms %}
+                    <div class="div-inputs">
+                        <label for={{ field.label }} class="label">{{ field.label }}</label><br>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+            {% endfor %}
+            <div class="div-btnsubmit">
+                <input class="btn-submit" type="submit" value="Salvar">
+            </div>
+            
+        </form>
+    {% endblock %}
     <script src="{% static 'cad_cliente/js/myscript.js' %}"></script>
 </body>
 </html>

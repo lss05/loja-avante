@@ -19,33 +19,26 @@ body {
     padding: 0%;    
 }
 
-section {
-    width: 500px;
-    height: 950px;
-    border: 0px solid black;
-    border-radius: 20px;
-    background-color: rgba(192, 192, 189, 0.596);
-    box-shadow: 2px 2px 4px rgb(8, 8, 8);
-    margin-top: 100px;
-    margin-bottom: 300px;
-}
-
 .form-teste {
-    display: block;
-    border: 0px solid black;
-    margin: 20px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 480px;
     font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     font-weight: bolder;
     font-size: 12pt;
-    color: rgb(3, 74, 136);
-}
-.form-teste input {
-    border-radius: 10px;
-}
+    color: rgba(3, 74, 136, 0.774);
+    margin-top: 85px;
+    margin-bottom: 85px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 10px;
 
+    border: 0px solid black;
+    border-radius: 20px;
+    background-color: rgba(192, 192, 189, 0.596);
+    box-shadow: 1px 2px 3px rgb(8, 8, 8);
+}
 .label {
-    height: auto;
     margin-bottom: 4px;
 }
 
@@ -53,15 +46,18 @@ section {
     display: block;
     border: 0px solid black;
     margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
-.div-inputs input {
-    width: 100%;
+.div-inputs .input-text {
+    width: 450px;
     border: 0px solid black;
     padding-top: 5px;
     padding-bottom: 5px;
     text-indent: 10px;
     margin-top: 1px;
+    border-radius: 10px;
 }
 
 #id_rua_ondemora {
@@ -74,15 +70,6 @@ section {
     text-indent: 10px;
 }
 
-.btn-submit {
-    width: 250px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    position: relative;
-    margin-left: 25%;
-    margin-top: 35px;
-}
-
 
 /*Erro vindo dos inputs fields do formulario não pode ser estilizados aqui.*/
 .errorlist {
@@ -91,6 +78,29 @@ section {
     list-style-type: none;
 }
 .div-btnsubmit {
+    display: flex;
+    flex-direction: row;
+    border: 0px solid black;
+    justify-content: center;
     position: relative;
     margin-bottom: 10px;
+}
+
+.btn-submit {
+    width: 250px;
+    height: 50px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+textarea{
+    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    font-size: 12pt;
+    border-radius: 10px;
+    width: 350px;
+    resize: none;
+    overflow: auto;
+    text-indent: 2%;
+    padding: 1%;
+
 }
