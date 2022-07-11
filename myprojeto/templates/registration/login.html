@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-autenticacao {
+            border: 1px solid black;
+        }
+        .btn-entrar {
+            width: 200px;
+            border: 0px solid black;
+            height: 40px;
+        }
+        .div-btnsubmit {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="login" method="post" class="form-autenticacao">
+        <div>
+            <h1>Área de login</h1>
+        </div>
+        {% for field in form %}
+            <div>
+                {{ field.label_tag }} <br>
+                {{ field }}
+            </div>
+            
+        {% endfor %}
+        <div class="div-btnsubmit">
+            <input type="submit" value="Entrar" class="btn-entrar">
+        </div>
+    </form>
+</body>
+</html>

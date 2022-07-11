@@ -30,6 +30,7 @@ def caduserForm(request):
         if forms.is_valid():
             forms.save()
             forms = form_dados_cliente()
+            return redirect("/autentication/autenticar_/")
         else:
             print(f'Deu Erro - Form invalidado. {forms.non_field_errors()} OU {forms.errors}')
         return render(request, 'cad_cliente/index.html',context={'forms': forms,'fields': fields,'err':forms.errors})

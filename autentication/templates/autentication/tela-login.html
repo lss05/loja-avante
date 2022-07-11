@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'autentication/css/tela_login.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        
+        <form class="form-autenticar" action="." method="post">
+            {% csrf_token %}
+            <div>
+                <!--<label for="" class="for">Entre com suas Credênciais</label>-->
+                <h2>Entre com suas Credênciais</h2>
+            </div>
+            <div class="conteiner-fields">
+                <div>
+                    <label class="lblnameinputs" for="id_username">Usuário:</label>
+                    <div class="divinputs-confi-global">
+                        <img src="{% static 'autentication/img/img_user.png' %}" alt="">
+                        <input class="style-global" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                    </div>
+
+                    <label class="lblnameinputs" for="id_password">Senha:</label>
+                    <div class="divinputs-confi-global">
+                        <img src="{% static 'autentication/img/img_password.png' %}" alt="">
+                        <input class="style-global" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+
+                    </div>
+                </div>
+                <div class="opcoes-form">
+                    <ul>
+                        <a class="url-recuperarsenha" href="">Recuperar Senha</a>
+                    </ul>
+                    <ul>
+                        <a class="url-criarconta" href="">Criar Conta</a>
+                    </ul>
+
+
+                </div>
+                <div class="termo">
+                    <h3>Ao continuar com o acesso, você concorda com a nossa política de privacidade</h3>
+                </div>
+                <div class="conteiner-btnsubmit">
+                    <input type="submit" value="Logar">
+                </div>
+                
+            </div>
+
+        </form>
+
+    </section>
+    
+</body>
+</html>

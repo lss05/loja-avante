@@ -18,26 +18,31 @@
 
 </head>
 <body>
-    {% block content %}
-    <!--{{ funcaoteste }}-->
+    <section><!--{{ funcaoteste }}-->
         <form class="form-teste" action="caduserForm" method="POST">
             {% csrf_token %}
+            <!--
             {% if forms.erros %}
                 {{ forms.erros }}
-            {% endif %}
-            {% for field in forms %}
-                    <div class="div-inputs">
-                        <label for={{ field.label }} class="label">{{ field.label }}</label><br>
+            {% endif %}-->
+            <div class="elementos-form">
+                {% for field in forms %}
+                    <div class="div-inputs {{ field.label }}">
+                        <!--<label for={{ field.label }} class="label {{ field.label_tag }}">{{ field.label }}</label><br>-->
+                        {{ field.label_tag }}
+                        <br>
                         {{ field }}
                         {{ field.errors }}
                     </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
             <div class="div-btnsubmit">
                 <input class="btn-submit" type="submit" value="Salvar">
             </div>
             
         </form>
-    {% endblock %}
+    </section>
+    
     <script src="{% static 'cad_cliente/js/myscript.js' %}"></script>
 </body>
 </html>
