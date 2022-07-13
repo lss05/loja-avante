@@ -23,6 +23,7 @@
                     <div class="divinputs-confi-global">
                         <img src="{% static 'autentication/img/img_user.png' %}" alt="">
                         <input class="style-global" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                        <label>{{ error }}</label>
                     </div>
 
                     <label class="lblnameinputs" for="id_password">Senha:</label>
@@ -37,7 +38,7 @@
                         <a class="url-recuperarsenha" href="">Recuperar Senha</a>
                     </ul>
                     <ul>
-                        <a class="url-criarconta" href="">Criar Conta</a>
+                        <a class="url-criarconta" href="{% url 'formcliente:caduserForm' %}">Criar Conta</a>
                     </ul>
 
 

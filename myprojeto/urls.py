@@ -26,4 +26,5 @@ urlpatterns = [
     path('response_api/',include('app_api.api_urls',namespace='appapi')),
     path('accounts/', include('django.contrib.auth.urls')), #Add Django site authentication urls (for login, logout, password management)
     path('admin/', admin.site.urls),
+    path('area/',include('dashboardcliente.urls_areacliente',namespace='dashboard'))
 ]

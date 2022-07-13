@@ -7,7 +7,7 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
 </head>
-<body>
+<body onload="StatusLogado('{{ user_logado }}',ancoraEntrarOrSair,ancoraCriarConta)">
     <main class="conteinerPrincipal">
         <div class="panel-top">
         </div>
@@ -17,7 +17,7 @@
         <div class="conteinerAcessar">
             <div class="subAcessar">
                 <p class="p_acessar">
-                    <a class="nav-link p_acessar" href="{% url 'autentication:autenticar' %}">Acessar</a>
+                    <a id="ancoraEntrarOrSair" class="nav-link p_acessar" href="{% url 'autentication:autenticar' %}">Entrar</a>
                 </p>
             </div>                
         </div>
@@ -25,7 +25,7 @@
         <div class="conteinerCadastrar">
             <div class="subCadastrar">
                 <p class="p_cadastrar">
-                    <a class="nav-link p_acessar" href="{% url 'formcliente:caduserForm' %}">Criar Conta</a>
+                    <a id="ancoraCriarConta" class="nav-link p_acessar" href="{% url 'formcliente:caduserForm' %}">Criar Conta</a>
                 </p>
             </div>
         </div>
@@ -115,68 +115,7 @@
                 <div class="grid-produtos">
                     <p class="produtos">row-0 Produto descrição 08</p>
                 </div>
-            </div>
-            <!--
-            <div class="row-1 row-estilo">
-                <div class="grid-produtos">
-                    <p class="produtos">row-1 Produto descrição 01</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-1 Produto descrição 02</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-1 Produto descrição 03</p>
-                </div>
             </div> 
-
-            <div class="row-2 row-estilo">
-                <div class="grid-produtos">
-                    <p class="produtos">row-2 Produto descrição 01</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-2 Produto descrição 02</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-2 Produto descrição 03</p>
-                </div>
-            </div> 
-
-            <div class="row-3 row-estilo">
-                <div class="grid-produtos">
-                    <p class="produtos">row-3 Produto descrição 01</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-3 Produto descrição 02</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-3 Produto descrição 03</p>
-                </div>
-            </div>
-
-            <div class="row-4 row-estilo">
-                <div class="grid-produtos">
-                    <p class="produtos">row-4 Produto descrição 01</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-4 Produto descrição 02</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-4 Produto descrição 03</p>
-                </div>
-            </div>
-
-            <div class="row-5 row-estilo">
-                <div class="grid-produtos">
-                    <p class="produtos">row-5 Produto descrição 01</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-5 Produto descrição 02</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-5 Produto descrição 03</p>
-                </div>
-            </div>
-            -->  
         </div>      
     </header>
 
@@ -184,8 +123,7 @@
         <div class="img-rodape"></div>
         <div></div>
     </footer>
-
-    <script>
+    <script src="{% static 'js/myfunc.js' %}">
         function enviar_orcamento() {
             var btnenviarorcamento = window.document.querySelector('input.btnEnviarOrcamento')
             btnenviarorcamento.style.color = 'green'

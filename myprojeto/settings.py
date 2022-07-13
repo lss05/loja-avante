@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'autentication',
     'cad_cliente',
     'app_api',
+    'dashboardcliente',
     #'monitoramento',
     #'sobre_nos'
 ]

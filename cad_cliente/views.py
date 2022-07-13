@@ -6,8 +6,8 @@ from home.models import Clientes
 cli = Clientes.objects.all()
 ERROR_FIELD = 'Ops! dados inválidos - verifique os dados inseridos.'
 
-def funcaoteste():
-    print('acessado de dentro do html')
+def funcaoteste(widget=None):
+    print(f'acessado de dentro do html {widget}')
 
 def caduserForm(request):
     fields = ['Usuário','Senha','Nome','CPF','Email','Celular/Watsaap','Código Postal','Rua',

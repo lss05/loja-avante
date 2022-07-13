@@ -18,7 +18,7 @@
 
 </head>
 <body>
-    <section><!--{{ funcaoteste }}-->
+    <section>
         <form class="form-teste" action="caduserForm" method="POST">
             {% csrf_token %}
             <!--
@@ -28,7 +28,6 @@
             <div class="elementos-form">
                 {% for field in forms %}
                     <div class="div-inputs {{ field.label }}">
-                        <!--<label for={{ field.label }} class="label {{ field.label_tag }}">{{ field.label }}</label><br>-->
                         {{ field.label_tag }}
                         <br>
                         {{ field }}
