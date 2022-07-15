@@ -7,7 +7,7 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
 </head>
-<body onload="StatusLogado('{{ user_logado }}',ancoraEntrarOrSair,ancoraCriarConta)">
+<body onload="StatusLogado('{{ user_logado }}',ancoraEntrarOrSair,ancoraCriarConta,'{{ desvio_url }}')">
     <main class="conteinerPrincipal">
         <div class="panel-top">
         </div>
@@ -37,6 +37,7 @@
                 <div class="categorias">
                     <p class="p-categorias">Categorias</p>
                 </div>
+                
                 <div class="subcategorias">
                     <p class="p-categorias">Alarme</p>
                 </div>
@@ -123,6 +124,7 @@
         <div class="img-rodape"></div>
         <div></div>
     </footer>
+
     <script src="{% static 'js/myfunc.js' %}">
         function enviar_orcamento() {
             var btnenviarorcamento = window.document.querySelector('input.btnEnviarOrcamento')
@@ -138,7 +140,6 @@
             etys[4].value = ''
 
         }
-
         function Sair_btn() {
             var btnenviarorcamento = window.document.querySelector('input.btnEnviarOrcamento')
             btnenviarorcamento.style.color = 'white'
