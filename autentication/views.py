@@ -29,10 +29,10 @@ def autenticar(request):
             return  render(request, 'autentication/tela-login.html',data)
         else:
             login(request,user)
-            return redirect('/')
+            return redirect('home:Home')
     #desloga o cliente e redireciona para HOME
     else:
         logout(request)
-        return redirect('/')
+        return redirect('home:Home')
     
     

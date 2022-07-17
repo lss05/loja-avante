@@ -30,12 +30,12 @@ def p_myapi_produtos_to_grupo(request,grupo,id): #p na frente da funcao indica q
 
 
 
-
-
-
-def i_myapi_produtos_to_grupo(request,grupo,id): # o i na frente da função que dizer que é interno e server para renderizar template.
-    print(f'Meu grupo é: {grupo} e o id: {id} e o meu app é')
-    produtos = views.Produtos.objects.filter(chavegrupo=views.GruposProdutos.objects.filter(nome=grupo)[0].id)
-    
-    return render(request,'',produtos)
+# APIs internas
+def i_myapi_produtos_to_grupo(request,grupo,iid): # o i na frente da função que dizer que é interno e server para renderizar template.
+    #print(f'Meu grupo é: {grupo} e o id: {iid} e o meu app é')
+    #produtos = views.Produtos.objects.filter(chavegrupo=views.GruposProdutos.objects.filter(nome=grupo)[0].id)
+    request.session['grupo'] = grupo
+    request.session['iid_grupo'] = iid
+    #request.session['produtos'] = produtos
+    return redirect('home:Home')
 

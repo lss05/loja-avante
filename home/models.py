@@ -1,5 +1,3 @@
-from email.policy import default
-import imghdr
 from django.db import models
 
 # Create your models here.
