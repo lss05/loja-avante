@@ -12,7 +12,6 @@
         <div class="panel-top">
         </div>
     </main>
-    
     <header class="conteiner-flags">
         <div class="conteinerAcessar">
             <div class="subAcessar">
@@ -37,25 +36,11 @@
                 <div class="categorias">
                     <p class="p-categorias">Categorias</p>
                 </div>
-                
-                <div class="subcategorias">
-                    <p class="p-categorias">Alarme</p>
-                </div>
-                <div class="subcategorias">
-                    <p class="p-categorias">Cercas Elétricas</p>
-                </div>
-                <div class="subcategorias">
-                    <p class="p-categorias">Sistema de Cameras - CFTV</p>
-                </div>
-                <div class="subcategorias">
-                    <p class="p-categorias">Telefonia</p>
-                </div>
-                <div class="subcategorias">
-                    <p class="p-categorias">Monitoramento 24hs</p>
-                </div>
-                <div class="subcategorias">
-                    <p class="p-categorias">Automatização</p>
-                </div>
+                {% for grupo in gruposprodutos %}
+                    <div class="subcategorias">
+                        <a class="a-categorias" href="{% url 'appapi:req_produtos' grupo.nome grupo.id %}">{{ grupo.nome }}</a>
+                    </div>
+                {% endfor %}
             </div>
 
             <div class="proposta-orcamento" id="proposta_orcamento">
@@ -85,37 +70,19 @@
                 <div class="div-btnEnviarOrcamento">
                     <input class='btnEnviarOrcamento' type="button" value="Enviar" onclick="enviar_orcamento()" onmouseout="Sair_btn()">
                     <br>
-                    <p>Não usaremos suas informações para promover Span e Envio de Mensagens.
+                        <p>Não usaremos suas informações para promover Span e Envio de Mensagens.
                     </p>
                 </div>
             </div>
         </div>
         <div class="higth-catalogos">
             <div class="row-0 row-estilo">
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 01</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 02</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 03</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 04</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 05</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 06</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 07</p>
-                </div>
-                <div class="grid-produtos">
-                    <p class="produtos">row-0 Produto descrição 08</p>
-                </div>
+                {% for produto in produtos_grupopadrao %}
+                    <div class="subcategorias">
+                        <div><img width="400px" height="400px" src="{{ produto.img_foto.url }}" alt=""></div>
+                        <div class="div-infoproduto"></div>
+                    </div>
+                {% endfor %}
             </div> 
         </div>      
     </header>

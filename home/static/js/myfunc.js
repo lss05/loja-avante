@@ -15,3 +15,16 @@ function StatusLogado(logado,ancora_entrarsair,ancora_criarconta,desviourl) {
 
 /*let ancora = logado==true?'Sair':'Entrar'
     ancora_entrarsair.innerText = ancora */
+
+function path_image(path){
+    console.log(path)
+}
+
+function prepara_image(img) {
+    console.log(img)
+    return 'imagefoto'
+}
+
+function pegajson(value){
+    console.log(value)
+}

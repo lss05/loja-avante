@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from .models import GruposProdutos,Produtos
 
-
+#minhas constantes
+MY_APPS = ['home','autentication','cad_cliente','dashboardcliente',]
 # Create your views here.
 
 def Home(request,grupoprodutos=None):
-    print(f'Pagina Home - verificando quem está logado: {request.user.is_authenticated}')
+    print(f'VALOR DE GET NA REQUISICAO: {request.GET}')
+
     logado = request.user.is_authenticated
 
     if logado:
@@ -22,7 +24,7 @@ def Home(request,grupoprodutos=None):
     # faco busca por todos os produtos da tela inicial ou caso seja solicitado.
     produtos_grupopadrao = Produtos.objects.filter(chavegrupo=grupopadrao)
     
-    data.update({'namegruposprodutos':listagruposprodutos,'produtos_grupopadrao':produtos_grupopadrao})
+    data.update({'gruposprodutos':listagruposprodutos,'produtos_grupopadrao':produtos_grupopadrao,'myapps': MY_APPS})
 
     print(f'verificando data {data}')
     
