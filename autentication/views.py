@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login, logout
 from django.forms import Field
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -8,7 +9,7 @@ def autenticar(request):
     Labelerror = Field(label='Erro! Usuário ou Senha incorreto')
     labelerror = 'Erro! Usuário ou Senha incorreto'
     data = {'error':labelerror,'labelerror':Labelerror}
-    print(f'Verificando field label: {Labelerror}')
+    #print(f'Verificando field label: {Labelerror}')
 
     # se o cliente não estiver logado e a requisição for para logar entra no if para renderizar a pagina de login
     if request.method == 'GET' and not request.user.is_authenticated:
@@ -29,10 +30,13 @@ def autenticar(request):
             return  render(request, 'autentication/tela-login.html',data)
         else:
             login(request,user)
-            return redirect('home:Home')
+            url = '/?grupo=promocoes&login=True'
+            #return redirect(f'home:Home')
+            return HttpResponseRedirect(url)
     #desloga o cliente e redireciona para HOME
     else:
         logout(request)
-        return redirect('home:Home')
+        url = '/?grupo=promocoes&logout=False'
+        return redirect(url)
     
     
