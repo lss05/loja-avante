@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate,login, logout
 from django.forms import Field
 from django.http import HttpResponseRedirect
 
+
 # Create your views here.
 
 def autenticar(request):
@@ -38,5 +39,5 @@ def autenticar(request):
         logout(request)
         url = '/?grupo=promocoes&logout=False'
         return redirect(url)
-    
+
     

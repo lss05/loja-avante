@@ -1,5 +1,22 @@
 from django import forms
 from .models import Clientes
+from django.contrib.auth.models import User
+
+class Form_User(forms.ModelForm):
+    username = forms.CharField(label='Usuário*', widget=forms.TextInput(attrs={"class":"useracesso input-text",
+    "type":"text","placeholder":"Digite seu usuário aqui...","name":"username","maxlength":150,"required":"","id":"id_username"}))
+
+    password = forms.CharField(label='Senha*', widget=forms.TextInput(attrs={"class":"senhaacesso input-text",
+    "type":"password","placeholder":"Digite sua senha aqui..."}))
+
+    email = forms.CharField(label='E-mail*', widget=forms.TextInput(attrs={"class":"my_email input-text",
+    "type":"email","placeholder":"Digite seu E-mail","name":"email", "maxlength":254,"id":"id_email"}))
+
+    #<input type="email" name="email" maxlength="254" id="id_email">
+
+    class Meta:
+        model = User
+        fields = ["username","password","email"]
 
 class form_dados_cliente(forms.ModelForm):
     user_acesso = forms.CharField(label='Usuário*', widget=forms.TextInput(attrs={"class":"useracesso input-text",
@@ -17,10 +34,6 @@ class form_dados_cliente(forms.ModelForm):
 
     cep = forms.CharField(label='Código postal*', widget=forms.TextInput(attrs={"class":"codigopostal input-text","id":"mycep",
     "type":"number","min":0,"placeholder":"Informe seu Cep, apenas números","onkeypress": "return validarnumber(event,mycep,8)","maxlength":8},))
-    
-
-    """rua_ondemora = forms.CharField(label='Rua*', widget=forms.TextInput(attrs={"class":"rua-ender input-text","id":"myrua","value":'testando aqui',
-    "type":"text","min":0,"placeholder":"Informe o nome da rua"},))"""
 
     num_casa = forms.CharField(label='Número*', widget=forms.TextInput(attrs={"class":"numcasa input-text","id":"mynumero",
     "type":"text","min":0,"placeholder":"Informe número de sua residência"},))

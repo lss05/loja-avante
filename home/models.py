@@ -1,7 +1,10 @@
 from django.db import models
 
+
+
 # Create your models here.
 #'user_acesso','senha_acesso','nome','cpf','email','cel','cep','rua_ondemora','num_casa','bairro_ondemora','cidade','ponto_referencia'
+
 class Clientes(models.Model):
     #acesso a plataforma
     user_acesso = models.CharField(unique=True, max_length=45,blank=False, null=False,verbose_name='Usuário')
