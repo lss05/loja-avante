@@ -78,9 +78,11 @@
         <div class="higth-catalogos">
             <div class="row-0 row-estilo">
                 {% for produto in produtos_grupopadrao %}
-                    <div class="subcategorias">
-                        <div><img width="300px" height="400px" src="{{ produto.img_foto.url }}" alt=""></div>
-                        <div class="div-infoproduto"></div>
+                    <div class="divproduto">
+                        <div class="div-imgproduto"><img width="300px" height="400px" src="{{ produto.img_foto.url }}" alt=""></div>
+                        <div class="div-infoproduto">
+                            <p class="p-infoproduto">{{ produto.tag_descricao }}</p>
+                        </div>
                     </div>
                 {% endfor %}
             </div> 

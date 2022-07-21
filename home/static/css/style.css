@@ -6,6 +6,7 @@ body {
     background-size: cover;
     box-sizing: border-box;
     position: relative;
+    height: auto;
     
 }
 
@@ -15,7 +16,7 @@ img {
 }
 
 div.panel-top {
-    width: 100%;
+    min-width: 100vw;
     height: 350px;
     cursor: pointer;
     background-image: url('../img/imgtoplogo.jpg');
@@ -31,6 +32,8 @@ div.panel-top {
     flex-wrap: wrap;
     position: relative;
     width: 100%;
+    margin-top: 10px;
+    border: 0px solid yellow;
 }
 div.left-painel {
     display: flex;
@@ -39,6 +42,7 @@ div.left-painel {
     gap: 2%;
     position: relative;
     padding-bottom: 2%;
+    margin-left: 20px;
     /*border: 1px solid darkred;*/   
 }
 
@@ -54,10 +58,12 @@ div.opcoes {
     border-right: 1px solid darkred;
     position: relative;
     flex-wrap: nowrap;
+    max-height: 450px;
     
 }
 
 .proposta-orcamento {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -76,10 +82,10 @@ div.opcoes {
     overflow-y: scroll;
     height: 900px;
     width: 960px;
-    border: 0px solid black;
+    border: 1px solid black;
     position: relative;
-    min-width: 300px;
-    
+    min-width: 250px;
+    margin-left: 20px;  
     
 }
 
@@ -157,24 +163,23 @@ input.btnEnviarOrcamento:hover {
     cursor: pointer;
     flex-wrap: wrap;
     width: 100%;
-    gap: 2%;
+    gap: 20px;
 }
 
 div.grid-produtos {
     width:300px;
     height: 500px;
-    border: 1px solid black;
+    border: 0px solid black;
     box-sizing: border-box;
     margin-bottom: 2%;
     margin-left: 2%;
 }
 
-div.panel-bottom {
-    border: 1px solid yellow;
-    height: 10vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
+.panel-rodape {
+    min-width: 100vw;
+    height: 500px;
+    margin-top: 20px;
+    margin-bottom: 0%;   
 }
 
 p.p_acessar {
@@ -206,7 +211,7 @@ p:hover {
 }
 
 div.img-rodape {
-    width: 100%;
+    min-width: 100vw;
     height: 260px;
     cursor: pointer;
     background-image: url('../img/rodape-1024_195.jpg');
@@ -315,10 +320,22 @@ div.subcategorias:hover {
     background-color: darkred;
 }
 
-/* style div produto*/
+
+
+div.divproduto{
+    width: 300px;
+    height: 500px;
+    background-color: white;
+}
+
 div.div-infoproduto {
     width: 100%;
     height: 100px;
-    border: 1px solid black;
-    padding-top: 10px;
+    background-color: white;
+}
+
+.p-infoproduto {
+    text-align: justify;
+    text-indent: 5px;
+    padding: 5%;
 }
