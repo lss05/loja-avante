@@ -80,12 +80,13 @@ div.opcoes {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: 900px;
+    height: 1037px;
     width: 960px;
     border: 1px solid black;
     position: relative;
     min-width: 250px;
-    margin-left: 20px;  
+    margin-left: 20px;
+    padding-right: 1%;  
     
 }
 

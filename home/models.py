@@ -49,6 +49,29 @@ class Produtos(models.Model):
     def __str__(self):
         return self.name
 
+class infoproduto_correios(models.Model):
+    myproduto = models.OneToOneField(Produtos,on_delete=models.CASCADE,verbose_name='Chave do Produtos',primary_key=True)
+
+    #Peso da encomenda, incluindo sua embalagem. O peso  deve  ser  informado  em  quilogramas.  Se  o formato for Envelope, o valor máximo permitido será 1 kg. 
+    peso=models.DecimalField(verbose_name='Peso total da encomenda',default=0,null=False,blank=False,max_digits=3,decimal_places=1)
+
+    formato = models.PositiveIntegerField(verbose_name='Tipo de encomenda',choices=((1,'Formato caixa/pacote'),(2,'Formato rolo/prisma'),(3,'Envelope')))
+
+    #Comprimento da encomenda (incluindo embalagem), em centímetros.
+    comprimento = models.DecimalField(verbose_name='Comprimento da encomenda',default=0,null=False,blank=False,max_digits=3,decimal_places=1)
+
+    #Altura  da  encomenda  (incluindo  embalagem),  em centímetros. Se o formato for envelope, informar zero (0).
+    altura = models.DecimalField(verbose_name='Altura da encomenda',default=0,null=False,blank=False,max_digits=3,decimal_places=1)
+
+    #Largura da  encomenda  (incluindo embalagem), em centímetros.
+    largura = models.DecimalField(verbose_name='Largura da encomenda',default=0,null=False,blank=False,max_digits=3,decimal_places=1)
+
+    #Diâmetro da encomenda  (incluindo embalagem),  em centímetros. default é zero
+    diametro = models.DecimalField(verbose_name='Diametro da encomenda',default=0,null=False,blank=False,max_digits=3,decimal_places=1)
+    
+    def __str__(self) -> str:
+        return f'Informações de Frete para {self.myproduto}'
+
 class Promo_Produtos(models.Model):
     id = models.AutoField(primary_key=True)
     chave_produto = models.ForeignKey(Produtos,on_delete=models.CASCADE)
