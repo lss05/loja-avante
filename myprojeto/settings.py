@@ -140,9 +140,9 @@ STATICFILE_DIR = [
 ]
 
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #'django.core.mail.backends.console.EmailBackend'
-EMAIL_FILE_PATH  =  BASE_DIR / "sent_emails"
 
 EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
