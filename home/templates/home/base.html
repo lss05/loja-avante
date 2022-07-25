@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
+    {% block stylecss %}
+    {% endblock stylecss %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <header class="barra-top">
+        <div class="texto-loga">
+            <h2 class="stilo-text">AVANTE MONITORAMENTO 24h</h1>
+            <h5 class="stilo-text stilo-text-h5">Trabalhamos com serviço de monitoramento eletrônico residêncial e conércial</h5>
+        </div>
+        <div class="controles-urls">
+            <a href="{% url 'home:Home' %}">Home</a>
+            <a href="">Contatos</a>
+        </div>
+        
+    </header>
+    {% block conteiner1 %}
+    {% endblock conteiner1 %}
+    
+</body>
+</html>
