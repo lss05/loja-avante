@@ -1,6 +1,7 @@
 from django import forms
 from .models import Clientes
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordChangeForm
 
 class Form_User(forms.ModelForm):
     username = forms.CharField(label='Usuário*', widget=forms.TextInput(attrs={"class":"useracesso input-text",
@@ -57,3 +58,22 @@ class form_dados_cliente(forms.ModelForm):
             super(form_dados_cliente,self).__init__(*args,**kwargs)
             self.fields['senha_acesso'].label = 'Senha de acesso'
         """
+
+class form_alterarsenha(forms.ModelForm):
+    senha_atual = forms.CharField(
+        label="Senha Atual",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'autofocus': True}))
+
+    new_senha1 = forms.CharField(
+        label="Nova senha",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'autofocus': True}))
+
+    new_senha2 = forms.CharField(
+        label="Repetir senha",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'autofocus': True}))
+    class Meta:
+        model=User
+        fields= "__all__"

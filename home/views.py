@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import GruposProdutos,Produtos,Promo_Produtos
+from .form_cliente import form_alterarsenha
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.decorators import login_required
 
 #minhas constantes
 MY_APPS = ['home','autentication','cad_cliente','dashboardcliente',]
@@ -47,3 +50,19 @@ def Home(request):
     data.update({'gruposprodutos':listagruposprodutos,'produtos_grupopadrao':produtos_padrao,'myapps': MY_APPS})
     
     return render(request, 'home/index.html',data)
+
+@login_required(login_url='login')
+def view_alterarsenha(request):
+    f_alterarsenha = PasswordChangeForm(user=request.user)
+    if request.method == 'GET':
+        print(f"Linha 55 view alterarsenha {request.POST}")
+        return render(request,'home/alterarsenha.html',{'form': f_alterarsenha})
+        
+    else:
+        print(f"Linha 58 view alterarsenha {request.POST}")
+        f_alterarsenha= PasswordChangeForm(request.user,data=request.POST)
+        if f_alterarsenha.is_valid():
+            f_alterarsenha.save()
+            return redirect('home:Home')
+        return render(request,'home/alterarsenha.html',{'form': f_alterarsenha})
+

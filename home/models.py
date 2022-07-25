@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.forms import PasswordChangeForm
 
 
 
@@ -94,3 +95,4 @@ class Transacoes(models.Model):
     entrada_avista = models.FloatField(default=0.0)
     desconto = models.FloatField(default=0.0)
     #valor_frete = a combinar
+    
